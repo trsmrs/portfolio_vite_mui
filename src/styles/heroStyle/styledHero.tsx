@@ -1,14 +1,34 @@
 import { styled } from "@mui/material";
 
 
-export const StyledHero = styled("div")(() => ({
-    background: 'linear-gradient(135deg, #2c123c 0%, #1c263d 40%, #0c4f66 80%, #702c4d 100%)',
+export const StyledHero = styled("div")(({ theme }) => ({
+    background: theme.palette.primary.main,
     width: "100%",
     height: "100vh",
+    display: "flex",
+    alignItems: "center"
+
+}))
+
+export const StyledImg = styled("img")(({theme}) => ({
+    borderRadius: "50%",
+    width: "80%",
+    border: `1px solid ${theme.palette.secondary.light}`,
     
 }))
 
-export const StyledImg = styled("img")(() => ({
-        borderRadius: "50%",
-        width: "100%"
+export const StyledButton = styled("button")(({ theme }) => ({
+    gap: 10,
+    backgroundColor: "transparent",
+    border: `1px solid ${theme.palette.primary.contrastText}`,
+    borderRadius: "3px",
+    padding: "5px 15px",
+    width: "100%",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: theme.palette.primary.contrastText,
+    '&:hover': {
+        backgroundColor: theme.palette.secondary.main
+    }
 }))
