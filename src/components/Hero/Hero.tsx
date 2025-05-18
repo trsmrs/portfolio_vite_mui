@@ -5,9 +5,34 @@ import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import Button from "../Button/Button";
 import { AnimatedBackground } from "../animated/AnimatedBackGround";
+import Writer from "../Writer/Writer-text";
+
+import CV from "../../assets/CV/tiago_machado.pdf"
 
 
 export const Hero = () => {
+
+
+    function handleDownCV() {
+
+        const link = document.createElement('a');
+        link.href = CV
+        link.download = 'tiago_machado.pdf';
+
+        document.body.appendChild(link);
+        link.click();
+
+        document.body.removeChild(link);
+    }
+
+    function handleEmail() {
+        const email = "trsminfo@gmail.com";
+        const subject = "Assunto";
+        const body = "Olá, vimos seu portfólio...";
+
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink);
+    }
 
     return (
         <StyledHero>
@@ -24,26 +49,24 @@ export const Hero = () => {
                         </Box>
                     </Grid>
                     <Grid size={{ xs: 12, md: 7 }}>
-                        <Typography color="primary.contrastText" variant="h1" textAlign={"center"}>Tiago Machado</Typography>
-                        <Typography color="primary.contrastText" variant="h2" textAlign={"center"}>Software Engineer</Typography>
-                         {/* <Typewriter text="I'm a Software Engineer" delay={120} variant="h2" color="primary.contrastText" /> */}
-                        
-                            <Box mt={4}>
-                                <Grid container spacing={3} display="flex" justifyContent="center">
-                                    <Grid size={{ xs: 10, md: 4 }}>
-                                        <Button>
-                                            <DownloadIcon />
-                                            <Typography>Download CV</Typography>
-                                        </Button>
-                                    </Grid>
-                                    <Grid size={{ xs: 10, md: 4 }}>
-                                        <Button>
-                                            <EmailIcon />
-                                            <Typography>Contact me</Typography>
-                                        </Button>
-                                    </Grid>
+                        <Typography color="primary.contrastText" variant="h1" textAlign={"center"} pb={2}>Tiago Machado</Typography>
+                        <Writer text="Engenheiro de Software" delay={120} variant="h2" color="primary.contrastText" />
+                        <Box mt={4}>
+                            <Grid container spacing={3} display="flex" justifyContent="center">
+                                <Grid size={{ xs: 10, md: 4 }}>
+                                    <Button onClick={() => handleDownCV()}>
+                                        <DownloadIcon />
+                                        <Typography>Download CV</Typography>
+                                    </Button>
                                 </Grid>
-                            </Box>
+                                <Grid size={{ xs: 10, md: 4 }}>
+                                    <Button onClick={() => handleEmail()}>
+                                        <EmailIcon />
+                                        <Typography>Contact me</Typography>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Box>
                     </Grid>
                 </Grid>
             </Container>

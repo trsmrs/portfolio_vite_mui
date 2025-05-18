@@ -5,11 +5,10 @@ export const StyledHero = styled("div")(({ theme }) => ({
     background: theme.palette.primary.main,
     width: "100%",
     height: "100vh",
-    border: "1px solid red",
     [theme.breakpoints.up('xs')]: {
         display: "block",
         padding: "20px",
-        paddingTop: "100px",
+        paddingTop: "150px",
         paddingBottom: "40px",
      
     },
@@ -27,6 +26,21 @@ export const StyledImg = styled("img")(({ theme }) => ({
     width: "80%",
     border: `1px solid ${theme.palette.secondary.light}`,
 
+}))
+
+export const StyledSkills = styled("div")(({ theme }) => ({
+    width: "100%",
+    alignItems: "center",
+    backgroundColor: theme.palette.primary.main
+}))
+
+export const StyledSkillsBox = styled("img")(({ theme }) => ({
+    width: "100%",
+    alignItems: "center",
+    backgroundColor: theme.palette.primary.main,
+    '&:hover': {
+        
+    }
 }))
 
 export const StyledButton = styled("button")(({ theme }) => ({

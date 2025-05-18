@@ -1,363 +1,235 @@
 import { Box } from "@mui/material"
 
 export const AnimatedBackground = () => {
+  // Gera 5 trajetórias diferentes para estrelas cadentes
+    const shootingStarPaths = [
+        { id: 'shootingStarPath1', d: 'M1200 50 Q 800 150 400 250 Q 100 350 -100 450', delay: 0 },
+        { id: 'shootingStarPath2', d: 'M1300 100 Q 900 200 300 400 Q 50 600 -200 700', delay: 2 },
+        { id: 'shootingStarPath3', d: 'M1400 30 Q 1000 80 600 180 Q 200 280 -100 380', delay: 4 },
+        { id: 'shootingStarPath4', d: 'M1100 200 Q 700 300 200 500 Q -50 650 -300 750', delay: 1 },
+        { id: 'shootingStarPath5', d: 'M1250 80 Q 850 180 450 280 Q 150 380 -150 480', delay: 3 }
+    ];
+
     return (
-        <Box>
+        <Box sx={{ overflow: 'hidden', position: 'relative' }}>
             <svg
-                className="BgAnimation__svg"
-                viewBox="0 0 602 602"
+                className="StarrySky__svg"
+                viewBox="0 0 1200 800"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <g opacity="0.15">
-                    <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M201.337 87.437C193.474 79.5738 180.725 79.5738 172.862 87.437L87.437 172.862C79.5739 180.725 79.5739 193.474 87.437 201.337L400.663 514.563C408.526 522.426 421.275 522.426 429.138 514.563L514.563 429.138C522.426 421.275 522.426 408.526 514.563 400.663L201.337 87.437ZM30.4869 115.912C-8.82897 155.228 -8.82897 218.972 30.4869 258.287L343.713 571.513C383.028 610.829 446.772 610.829 486.088 571.513L571.513 486.088C610.829 446.772 610.829 383.028 571.513 343.713L258.287 30.4869C218.972 -8.82896 155.228 -8.82896 115.912 30.4869L30.4869 115.912Z"
-                        stroke="url(#paint0_radial)"
-                        id="path_0"
-                    />
-                    <path
-                        d="M514.563 201.337C522.426 193.474 522.426 180.725 514.563 172.862L429.138 87.437C421.275 79.5738 408.526 79.5739 400.663 87.437L358.098 130.002L301.148 73.0516L343.713 30.4869C383.028 -8.82896 446.772 -8.82896 486.088 30.4869L571.513 115.912C610.829 155.228 610.829 218.972 571.513 258.287L357.802 471.999L300.852 415.049L514.563 201.337Z"
-                        stroke="url(#paint1_radial)"
-                        id="path_1"
-                    />
-                    <path
-                        d="M243.901 471.999L201.337 514.563C193.474 522.426 180.725 522.426 172.862 514.563L87.437 429.138C79.5739 421.275 79.5739 408.526 87.437 400.663L301.148 186.952L244.198 130.002L30.4869 343.713C-8.82897 383.028 -8.82897 446.772 30.4869 486.088L115.912 571.513C155.228 610.829 218.972 610.829 258.287 571.513L300.852 528.949L243.901 471.999Z"
-                        stroke="url(#paint2_radial)"
-                        id="path_2"
-                    />
+                {/* Planeta Saturno estilizado */}
+                <g transform="translate(800, 150) scale(0.9)">
+                    {/* Planeta principal */}
+                    <circle cx="0" cy="0" r="60" fill="#C2A76F" opacity="1">
+                        <animate 
+                            attributeName="opacity" 
+                            values="2.8;2.85;2.8" 
+                            dur="20s" 
+                            repeatCount="indefinite" 
+                        />
+                    </circle>
+                    
+                    {/* Anéis de Saturno */}
+                    <ellipse cx="0" cy="0" rx="90" ry="30" fill="none" stroke="#C2A76F" strokeWidth="6" opacity="0.7" transform="rotate(-20 0 0)">
+                        <animate 
+                            attributeName="opacity" 
+                            values="0.7;0.75;0.7" 
+                            dur="15s" 
+                            repeatCount="indefinite" 
+                        />
+                    </ellipse>
+                    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#C2A76F" strokeWidth="6" opacity="0.8" transform="rotate(-20 0 0)">
+                        <animate 
+                            attributeName="opacity" 
+                            values="1.8;0.85;1.8" 
+                            dur="18s" 
+                            repeatCount="indefinite" 
+                        />
+                    </ellipse>
+                    
+                    {/* Detalhes na superfície */}
+                    <ellipse cx="-10" cy="-10" rx="15" ry="8" fill="#C9B89A" opacity="0.6" transform="rotate(30 -15 -10)" />
+                    <ellipse cx="20" cy="15" rx="10" ry="5" fill="#C9B89A" opacity="0.5" transform="rotate(-10 20 15)" />
+                    
+                    {/* Brilho sutil */}
+                    <circle cx="-30" cy="-30" r="10" fill="white" opacity="0.1" />
                 </g>
-                <ellipse
-                    cx="295.027"
-                    cy="193.118"
-                    transform="translate(-295.027 -193.118)"
-                    rx="1.07306"
-                    ry="1.07433"
-                    fill="#945DD6"
-                >
-                    <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-                        <mpath xlinkHref="#path_2" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M294.685 193.474L268.932 219.258"
-                    transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
-                    stroke="url(#paint3_linear)"
-                >
-                    <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-                        <mpath xlinkHref="#path_2" />
-                    </animateMotion>
-                </path>
-                <ellipse
-                    cx="295.027"
-                    cy="193.118"
-                    transform="translate(-295.027 -193.118)"
-                    rx="1.07306"
-                    ry="1.07433"
-                    fill="#46737"
-                >
-                    <animateMotion
-                        dur="5s"
-                        begin="1"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_2" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M294.685 193.474L268.932 219.258"
-                    transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
-                    stroke="url(#paint7_linear)"
-                >
-                    <animateMotion
-                        dur="5s"
-                        begin="1"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_2" />
-                    </animateMotion>
-                </path>
-                <ellipse
-                    cx="476.525"
-                    cy="363.313"
-                    rx="1.07433"
-                    ry="1.07306"
-                    transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-                    fill="#945DD6"
-                >
-                    <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M476.171 362.952L450.417 337.168"
-                    transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
-                    stroke="url(#paint4_linear)"
-                >
-                    <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </path>
-                <ellipse
-                    cx="382.164"
-                    cy="155.029"
-                    rx="1.07433"
-                    ry="1.07306"
-                    transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
-                    fill="#F46737"
-                >
-                    <animateMotion
-                        dur="10s"
-                        begin="1"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M381.81 154.669L356.057 128.885"
-                    transform="translate(-381.81 -154.669) rotate(-45 381.81 154.669)"
-                    stroke="url(#paint5_linear)"
-                >
-                    <animateMotion
-                        dur="10s"
-                        begin="1"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </path>
-                <ellipse
-                    cx="333.324"
-                    cy="382.691"
-                    rx="1.07306"
-                    ry="1.07433"
-                    transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
-                    fill="#F46737"
-                >
-                    <animateMotion
-                        dur="5s"
-                        begin="0"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_1" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M333.667 382.335L359.42 356.551"
-                    transform="scale(-1 1) translate(-333.667 -382.335) rotate(45 333.667 382.335)"
-                    stroke="url(#paint6_linear)"
-                >
-                    <animateMotion
-                        dur="5s"
-                        begin="0"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_1" />
-                    </animateMotion>
-                </path>
-                <ellipse
-                    cx="165.524"
-                    cy="93.9596"
-                    rx="1.07306"
-                    ry="1.07433"
-                    transform="translate(-165.524 -93.9596)"
-                    fill="#F46737"
-                >
-                    <animateMotion
-                        dur="10s"
-                        begin="3"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M165.182 94.3159L139.429 120.1"
-                    transform="translate(-165.182 -94.3159) rotate(45 165.182 94.3159)"
-                    stroke="url(#paint7_linear)"
-                >
-                    <animateMotion
-                        dur="10s"
-                        begin="3"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </path>
-                <ellipse
-                    cx="476.525"
-                    cy="363.313"
-                    rx="1.07433"
-                    ry="1.07306"
-                    transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-                    fill="#13ADC7"
-                >
-                    <animateMotion
-                        dur="12s"
-                        begin="4"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </ellipse>
-                <path
-                    d="M476.171 362.952L450.417 337.168"
-                    transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
-                    stroke="url(#paint11_linear)"
-                >
-                    <animateMotion
-                        dur="12s"
-                        begin="4"
-                        repeatCount="indefinite"
-                        rotate="auto"
-                    >
-                        <mpath xlinkHref="#path_0" />
-                    </animateMotion>
-                </path>
+
+                {/* Estrelas estáticas */}
+                {Array.from({ length: 150 }).map((_, i) => {
+                    const x = Math.random() * 1200;
+                    const y = Math.random() * 800;
+                    const size = Math.random() * 0.5 + 0.2;
+                    const opacity = Math.random() * 0.7 + 0.3;
+                    const delay = Math.random() * 5;
+                    
+                    return (
+                        <circle
+                            key={`star-${i}`}
+                            cx={x}
+                            cy={y}
+                            r={size}
+                            fill="white"
+                            opacity={opacity}
+                        >
+                            <animate 
+                                attributeName="r" 
+                                values={`${size};${size*1.5};${size}`} 
+                                dur={`${Math.random() * 3 + 2}s`} 
+                                begin={`${delay}s`}
+                                repeatCount="indefinite"
+                            />
+                            <animate 
+                                attributeName="opacity" 
+                                values={`${opacity};${opacity*0.5};${opacity}`} 
+                                dur={`${Math.random() * 4 + 3}s`} 
+                                begin={`${delay + 1}s`}
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                    );
+                })}
+                
+                {/* Estrelas cadentes */}
+                {shootingStarPaths.map((path, index) => (
+                    <g key={`shooting-star-${index}`}>
+                        <path
+                            id={path.id}
+                            d={path.d}
+                            stroke="transparent"
+                        />
+                        
+                        <g transform="translate(-10, -10)">
+                            <circle
+                                cx="0"
+                                cy="0"
+                                r="2"
+                                fill="white"
+                            >
+                                <animateMotion
+                                    dur="2s"
+                                    begin={`${path.delay}s`}
+                                    repeatCount="indefinite"
+                                    rotate="auto"
+                                >
+                                    <mpath xlinkHref={`#${path.id}`} />
+                                </animateMotion>
+                                <animate
+                                    attributeName="r"
+                                    values="2;3;1;0"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                />
+                                <animate
+                                    attributeName="fill"
+                                    values="white;cyan;white"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                />
+                            </circle>
+                            <path
+                                d="M0 0 L15 0"
+                                stroke="url(#shootingStarGradient)"
+                                strokeWidth="1.5"
+                                opacity="0.8"
+                            >
+                                <animateMotion
+                                    dur="2s"
+                                    begin={`${path.delay}s`}
+                                    repeatCount="indefinite"
+                                    rotate="auto"
+                                >
+                                    <mpath xlinkHref={`#${path.id}`} />
+                                </animateMotion>
+                                <animate
+                                    attributeName="opacity"
+                                    values="0.8;0.9;0.3;0"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                />
+                                <animate
+                                    attributeName="stroke"
+                                    values="white;cyan;white"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                />
+                            </path>
+                        </g>
+                    </g>
+                ))}
+                
+                {/* Grandes estrelas cintilantes */}
+                {[50, 150, 300, 500, 700, 900, 1100].map((x, i) => {
+                    const y = 100 + (i % 3) * 250;
+                    const delay = i * 0.5;
+                    
+                    return (
+                        <g key={`big-star-${i}`}>
+                            <circle
+                                cx={x}
+                                cy={y}
+                                r="1.2"
+                                fill="white"
+                                opacity="0.9"
+                            >
+                                <animate 
+                                    attributeName="r" 
+                                    values="1.2;2;1.2" 
+                                    dur="4s" 
+                                    begin={`${delay}s`}
+                                    repeatCount="indefinite"
+                                />
+                                <animate 
+                                    attributeName="opacity" 
+                                    values="0.9;0.6;0.9" 
+                                    dur="5s" 
+                                    begin={`${delay + 1}s`}
+                                    repeatCount="indefinite"
+                                />
+                            </circle>
+                            {[0, 45, 90, 135].map((rot, j) => (
+                                <line
+                                    key={`ray-${i}-${j}`}
+                                    x1={x}
+                                    y1={y}
+                                    x2={x}
+                                    y2={y - 3}
+                                    stroke="white"
+                                    strokeWidth="0.6"
+                                    opacity="0.7"
+                                    transform={`rotate(${rot} ${x} ${y})`}
+                                >
+                                    <animate 
+                                        attributeName="opacity" 
+                                        values="0.7;0.9;0.5;0.7" 
+                                        dur="3s" 
+                                        begin={`${delay + j*0.3}s`}
+                                        repeatCount="indefinite"
+                                    />
+                                    <animate 
+                                        attributeName="y2" 
+                                        values={`${y-3};${y-5};${y-3}`} 
+                                        dur="4s" 
+                                        begin={`${delay + j*0.2}s`}
+                                        repeatCount="indefinite"
+                                    />
+                                </line>
+                            ))}
+                        </g>
+                    );
+                })}
+                
                 <defs>
-                    <radialGradient
-                        id="paint0_radial"
-                        cx="0"
-                        cy="0"
-                        r="1"
-                        gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(301 301) rotate(90) scale(300)"
-                    >
-                        <stop offset="0.333333" stopColor="#FBFBFB" />
-                        <stop offset="1" stopColor="white" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient
-                        id="paint1_radial"
-                        cx="0"
-                        cy="0"
-                        r="1"
-                        gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(301 301) rotate(90) scale(300)"
-                    >
-                        <stop offset="0.333333" stopColor="#FBFBFB" />
-                        <stop offset="1" stopColor="white" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient
-                        id="paint2_radial"
-                        cx="0"
-                        cy="0"
-                        r="1"
-                        gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(301 301) rotate(90) scale(300)"
-                    >
-                        <stop offset="0.333333" stopColor="#FBFBFB" />
-                        <stop offset="1" stopColor="white" stopOpacity="0" />
-                    </radialGradient>
-                    <linearGradient
-                        id="paint3_linear"
-                        x1="295.043"
-                        y1="193.116"
-                        x2="269.975"
-                        y2="218.154"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#945DD6" />
-                        <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+                    <linearGradient id="shootingStarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="white" stopOpacity="1" />
+                        <stop offset="100%" stopColor="cyan" stopOpacity="0.5" />
                     </linearGradient>
-                    <linearGradient
-                        id="paint4_linear"
-                        x1="476.529"
-                        y1="363.31"
-                        x2="451.461"
-                        y2="338.272"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#945DD6" />
-                        <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint5_linear"
-                        x1="382.168"
-                        y1="155.027"
-                        x2="357.1"
-                        y2="129.989"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#F46737" />
-                        <stop offset="1" stopColor="#F46737" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint6_linear"
-                        x1="333.309"
-                        y1="382.693"
-                        x2="358.376"
-                        y2="357.655"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#F46737" />
-                        <stop offset="1" stopColor="#F46737" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint7_linear"
-                        x1="165.54"
-                        y1="93.9578"
-                        x2="140.472"
-                        y2="118.996"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#F46737" />
-                        <stop offset="1" stopColor="#F46737" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint8_linear"
-                        x1="414.367"
-                        y1="301.156"
-                        x2="439.435"
-                        y2="276.118"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#13ADC7" />
-                        <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint9_linear"
-                        x1="515.943"
-                        y1="288.238"
-                        x2="541.339"
-                        y2="291.454"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#13ADC7" />
-                        <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint10_linear"
-                        x1="117.001"
-                        y1="230.619"
-                        x2="117.36"
-                        y2="258.193"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#945DD6" />
-                        <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient
-                        id="paint11_linear"
-                        x1="476.529"
-                        y1="363.31"
-                        x2="451.461"
-                        y2="338.272"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop stopColor="#13ADC7" />
-                        <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
-                    </linearGradient>
+                    
+                    <filter id="planetGlow" x="-30%" y="-30%" width="160%" height="160%">
+                        <feGaussianBlur stdDeviation="2" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
                 </defs>
             </svg>
         </Box>
