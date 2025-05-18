@@ -14,7 +14,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Projeto Desafio Sharenery 2022",
             subtitle: "Nov 2022 - Dez 2022",
-            srcImg: "/src/assets/images/logo.png",
+            srcImg: "/images/logo.png",
             description: "Projeto desenvolvido para uma vaga de emprego aberta pela empresa Sharenergy em 2022. A vaga era para full-stack. Utilizando NodeJs no backend, e React no frontEnd",
             technologies: "Tecnologias: JavaScript, React, CSS, NodeJs",
             // websiteURL: "",
@@ -23,7 +23,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Projeto JackExperts",
             subtitle: "Jan 2023 - Fev 2023",
-            srcImg: "/src/assets/images/app03.png",
+            srcImg: "/images/app03.png",
             description: "Projeto desenvolvido para uma vaga de emprego aberta pela empresa Jack Experts em 2023. Uma vaga full-stack. A aplicação exigia registro de usuários com autenticação JWT, e cadastro de tarefas para cada usuário.",
             technologies: "Tecnologias: JavaScript, React, Material-UI, NodeJs/RESTful",
             // websiteURL: "",
@@ -32,7 +32,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Projeto para uso pessoal",
             subtitle: "Maio 2023 - Agosto 2023",
-            srcImg: "/src/assets/images/app04.png",
+            srcImg: "/images/app04.png",
             description: "Projeto pensado, e desenvolvido por mim em um contexto onde trabalhei, o projeto foi para centralizar dados de clientes, procedimentos, e registros de Switches, tais como nomemclatura, host, ips, switch de borda, e etc...",
             technologies: "Tecnologias: JavaScript, React, Material-UI, NodeJs/RESTful",
             // websiteURL: "",
