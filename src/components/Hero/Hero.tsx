@@ -50,7 +50,7 @@ export const Hero = () => {
                     </Grid>
                     <Grid size={{ xs: 12, md: 7 }}>
                         <Typography color="primary.contrastText" variant="h1" textAlign={"center"} pb={2}>Tiago Machado</Typography>
-                        <Writer text="Engenheiro de Software" delay={120} variant="h2" color="primary.contrastText" />
+                        <Writer text="Desenvolvedor Front-End" delay={120} variant="h2" color="primary.contrastText" />
                         <Box mt={4}>
                             <Grid container spacing={3} display="flex" justifyContent="center">
                                 <Grid size={{ xs: 10, md: 4 }}>
