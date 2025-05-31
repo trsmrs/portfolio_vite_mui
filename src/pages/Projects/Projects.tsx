@@ -41,7 +41,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Projeto para uso pessoal",
             subtitle: "Maio 2025 - Maio 2025",
-            srcImg: "/src/assets/images/app05.png",
+            srcImg: "/images/app05.png",
             description: "Aplicação Pomodoro de foco para estudos desenvolvido em aula no curso do Professor Otávio Miranda.",
             technologies: "Tecnologias: TypeScript, React, CSS Modules, Redux, ContextAPI",
             websiteURL: "https://chronos-pomodoro-jet-beta.vercel.app/",
