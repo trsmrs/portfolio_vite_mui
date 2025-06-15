@@ -49,6 +49,9 @@ const Nav = () => {
                         onClose={handleClose}
                     >
                        
+                        <MenuItem onClick={() => handleSmoothScroll("home")}>
+                            <StyledNavLink>Home</StyledNavLink>
+                        </MenuItem>
                         <MenuItem onClick={() => handleSmoothScroll("projects")}>
                             <StyledNavLink>Projects</StyledNavLink>
                         </MenuItem>
@@ -58,8 +61,8 @@ const Nav = () => {
                     </Menu>
                 </StyledMobileToolbar>
                 <StyledDesktopToolbar variant="regular">
-                    <MenuItem onClick={() => handleSmoothScroll("top")}>
-                        <StyledNavLink>Top</StyledNavLink>
+                    <MenuItem onClick={() => handleSmoothScroll("home")}>
+                        <StyledNavLink>Home</StyledNavLink>
                     </MenuItem>
                     <MenuItem onClick={() => handleSmoothScroll("projects")}>
                         <StyledNavLink>Projects</StyledNavLink>
