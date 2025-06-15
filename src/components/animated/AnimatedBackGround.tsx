@@ -21,7 +21,7 @@ export const AnimatedBackground = () => {
                 {/* Planeta Saturno estilizado */}
                 <g transform="translate(800, 150) scale(0.9)">
                     {/* Planeta principal */}
-                    <circle cx="0" cy="0" r="60" fill="#C2A76F" opacity="1">
+                    <circle cx="0" cy="0" r="60" fill="#869ab2" opacity="1">
                         <animate 
                             attributeName="opacity" 
                             values="2.8;2.85;2.8" 
@@ -31,7 +31,7 @@ export const AnimatedBackground = () => {
                     </circle>
                     
                     {/* Anéis de Saturno */}
-                    <ellipse cx="0" cy="0" rx="90" ry="30" fill="none" stroke="#C2A76F" strokeWidth="6" opacity="0.7" transform="rotate(-20 0 0)">
+                    <ellipse cx="0" cy="0" rx="90" ry="30" fill="none" stroke="#9fb9d8" strokeWidth="6" opacity="0.7" transform="rotate(-20 0 0)">
                         <animate 
                             attributeName="opacity" 
                             values="0.7;0.75;0.7" 
@@ -39,7 +39,7 @@ export const AnimatedBackground = () => {
                             repeatCount="indefinite" 
                         />
                     </ellipse>
-                    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#C2A76F" strokeWidth="6" opacity="0.8" transform="rotate(-20 0 0)">
+                    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#9fb9d8" strokeWidth="6" opacity="0.8" transform="rotate(-20 0 0)">
                         <animate 
                             attributeName="opacity" 
                             values="1.8;0.85;1.8" 
@@ -49,8 +49,8 @@ export const AnimatedBackground = () => {
                     </ellipse>
                     
                     {/* Detalhes na superfície */}
-                    <ellipse cx="-10" cy="-10" rx="15" ry="8" fill="#C9B89A" opacity="0.6" transform="rotate(30 -15 -10)" />
-                    <ellipse cx="20" cy="15" rx="10" ry="5" fill="#C9B89A" opacity="0.5" transform="rotate(-10 20 15)" />
+                    <ellipse cx="-10" cy="-10" rx="15" ry="8" fill="#9fb9d8" opacity="0.6" transform="rotate(30 -15 -10)" />
+                    <ellipse cx="20" cy="15" rx="10" ry="5" fill="#9fb9d8" opacity="0.5" transform="rotate(-10 20 15)" />
                     
                     {/* Brilho sutil */}
                     <circle cx="-30" cy="-30" r="10" fill="white" opacity="0.1" />

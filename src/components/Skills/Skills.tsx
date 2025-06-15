@@ -1,6 +1,7 @@
-import { FaCss3Alt, FaHtml5 } from "react-icons/fa6";
+import { FaCss3Alt, FaGolang, FaHtml5, FaReact } from "react-icons/fa6";
+import { RiNextjsFill, RiNodejsFill } from "react-icons/ri";
+import { SiExpress } from 'react-icons/si';
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiNestjs } from "react-icons/si";
 import { StyledSkills } from "../../styles/heroStyle/styledHero";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import theme from "../../theme";
@@ -10,7 +11,11 @@ function Skills() {
         { icon: <FaHtml5 />, label: "Html5" },
         { icon: <FaCss3Alt />, label: "CSS3" },
         { icon: <BiLogoTypescript />, label: "TypeScript" },
-        { icon: <SiNestjs />, label: "NestJs" },
+        { icon: <FaReact />, label: "React" },
+        { icon: <RiNextjsFill />, label: "NextJs" },
+        { icon: <RiNodejsFill />, label: "NodeJs" },
+        { icon: <SiExpress />, label: "Express" },
+        { icon: <FaGolang />, label: "Go Lang" },
     ];
 
     return (
@@ -31,13 +36,13 @@ function Skills() {
                     pb={3}
                     alignItems="center"
                     color={theme.palette.secondary.main}
-                    
+
                 >
                     <Grid
                         container
                         spacing={1}
                         justifyContent="center"
-                        
+
                     >
                         {icons.map(({ icon, label }, index) => (
                             <Grid size={{ xs: 6, sm: 3 }} key={index}>

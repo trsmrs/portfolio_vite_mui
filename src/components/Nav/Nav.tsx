@@ -25,7 +25,7 @@ const Nav = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="absolute">
+            <AppBar position="fixed">
                 <StyledMobileToolbar>
                     <IconButton
                         size="large"
@@ -48,9 +48,7 @@ const Nav = () => {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
-                        <MenuItem>
-                            About
-                        </MenuItem>
+                       
                         <MenuItem onClick={() => handleSmoothScroll("projects")}>
                             <StyledNavLink>Projects</StyledNavLink>
                         </MenuItem>
@@ -60,8 +58,8 @@ const Nav = () => {
                     </Menu>
                 </StyledMobileToolbar>
                 <StyledDesktopToolbar variant="regular">
-                    <MenuItem onClick={() => handleSmoothScroll("about")}>
-                        <StyledNavLink>About</StyledNavLink>
+                    <MenuItem onClick={() => handleSmoothScroll("top")}>
+                        <StyledNavLink>Top</StyledNavLink>
                     </MenuItem>
                     <MenuItem onClick={() => handleSmoothScroll("projects")}>
                         <StyledNavLink>Projects</StyledNavLink>
